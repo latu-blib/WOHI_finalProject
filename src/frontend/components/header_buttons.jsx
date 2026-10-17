@@ -1,17 +1,17 @@
 function marketsButton() {
     return (
-        <button>Markets</button>
+        <button className="headerButtons">Markets</button>
     );
 }
 
 function newsButton() {
     return (
-        <button>News</button>
+        <button className="headerButtons">News</button>
     );
 }
 
 function watchlistButton() {
     return (
-        <button>Watchlist</button>
+        <button className="headerButtons">Watchlist</button>
     );
 }
