@@ -10,7 +10,7 @@ function newsButton() {
     );
 }
 
-function watchlistButton() {
+function watchListButton() {
     return (
         <button className="headerButtons">Watchlist</button>
     );
