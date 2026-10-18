@@ -34,3 +34,12 @@ export function WatchListButton() {
         <button className="headerButtons" id="myList">Watchlist</button>
     );
 }
+
+function SearchBar() {
+    return (
+        <form> <label id="searchBar">Search:</label>
+            <input type="Search" id="searchBar" placeholder="Search" name="Search"/>
+            <button>Search</button>
+        </form>
+    );
+}

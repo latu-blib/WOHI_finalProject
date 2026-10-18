@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import React from "react"
 import './index.css'
-import {MarketsButton, NewsButton, WatchListButton} from "./components/header_buttons.jsx"
-import SearchBar from "./components/searchbar.jsx"
+import {MarketsButton, NewsButton, WatchListButton, SearchBar} from "./components/header_buttons.jsx"
 import {Indexes, Materials, Currencies, Charts} from "./components/marketsPage.jsx"
 import WatchList from "./components/watchListPage.jsx"
 import LinesOfNews from "./components/newsPage.jsx"
