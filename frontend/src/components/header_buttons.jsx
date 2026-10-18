@@ -1,16 +1,16 @@
-function marketsButton() {
+function MarketsButton() {
     return (
         <button className="headerButtons">Markets</button>
     );
 }
 
-function newsButton() {
+function NewsButton() {
     return (
         <button className="headerButtons">News</button>
     );
 }
 
-function watchListButton() {
+function WatchListButton() {
     return (
         <button className="headerButtons">Watchlist</button>
     );

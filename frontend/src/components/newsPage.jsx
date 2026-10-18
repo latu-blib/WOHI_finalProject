@@ -1,6 +1,6 @@
-function linesOfNews() {
+function LinesOfNews() {
     return (
-        <nav>
+        <nav id={newsFeed}>
             <ul>
                 <li>items</li>
             </ul>

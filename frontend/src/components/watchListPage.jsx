@@ -1,6 +1,6 @@
-function watchList() {
+function WatchList() {
     return (
-        <table>
+        <table id={theList}>
             <tr>
                 <th>Name</th>   <th>Value</th>   <th>Today%</th>
             </tr>
