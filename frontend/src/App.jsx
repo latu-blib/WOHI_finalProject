@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import React from "react"
 import './index.css'
+import {MarketsButton, NewsButton, WatchListButton} from "./components/header_buttons.jsx"
+import SearchBar from "./components/searchbar.jsx"
+import {Indexes, Materials, Currencies, Charts} from "./components/marketsPage.jsx"
+import WatchList from "./components/watchListPage.jsx"
+import LinesOfNews from "./components/newsPage.jsx"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,24 +14,40 @@ function App() {
     <>
       <section id="center">
         <div className="hero">
-          <marketsButton />
-          <newsButton />
-          <watchListButton />
+          <MarketsButton />
+          <NewsButton />
+          <WatchListButton />
         </div>
         <div>
-          <searchBar />
+          <SearchBar />
         </div>
         <div>
-          <indexes />
-          <materials />
-          <currencies />
+          <Indexes />
+          <Materials />
+          <Currencies />
         </div>
         <div>
-          <charts />
+          <Charts />
         </div>
       </section>
     </>
   )
 }
+
+async function getData() {
+  try {
+    const response = await fetch('"https://api.marketstack.com"'); // URL of the REST API
+    // GET by default — no method specified
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`); // detect possible errors
+    }
+    const data = await response.json(); // extract the JSON response (needs await too)
+    console.log(data);
+    // use the data — for example, update the DOM
+  } catch (error) {
+    console.error('Error fetching data:', error); // handle errors
+  }
+}
+
 
 export default App

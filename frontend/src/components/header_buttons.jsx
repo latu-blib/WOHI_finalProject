@@ -1,17 +1,36 @@
-function MarketsButton() {
+export function MarketsButton() {
+    let status = true
+    document.getElementById("Markets").addEventListeners("click", function() {
+        if (status === false) {
+            status = true}
+    }
+    )
     return (
-        <button className="headerButtons">Markets</button>
+        <button className="headerButtons" id="Markets">Markets</button>
     );
 }
 
-function NewsButton() {
+export function NewsButton() {
+    let status = false
+    document.getElementById("News").addEventListeners("click", function() {
+        if (status === false) {
+            status = true}
+    }
+    )
     return (
-        <button className="headerButtons">News</button>
+        <button className="headerButtons" id="News">News</button>
     );
 }
 
-function WatchListButton() {
+export function WatchListButton() {
+    let status = false
+    document.getElementById("myList").addEventListeners("click", function () {
+        if (status === false) {
+            status = true
+        }
+    }
+    )
     return (
-        <button className="headerButtons">Watchlist</button>
+        <button className="headerButtons" id="myList">Watchlist</button>
     );
 }
