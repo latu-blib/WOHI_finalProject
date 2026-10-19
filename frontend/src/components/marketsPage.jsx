@@ -1,4 +1,9 @@
-function Indexes() {
+import {useState} from "react";
+
+export function Indexes(props) {
+    function handleClick(props) {
+        console.log("Markets klikattu");
+    }
     return (
         <>
         <label form="marketPlaces">Indexes</label>
@@ -11,7 +16,10 @@ function Indexes() {
 )
 }
 
-function Materials() {
+export function Materials(props) {
+    function handleClick(props) {
+        console.log("Markets klikattu");
+    }
     return (
         <>
             <label form="materialList">Raw materials</label>
@@ -27,11 +35,14 @@ function Materials() {
     )
 }
 
-function Currencies() {
+export function Currencies(props) {
+    function handleClick(props) {
+        console.log("Markets klikattu");
+    }
     return (
         <>
-            <label form="denomination">Currencies</label>
-            <select id="denomination" name="denomination">
+            <label form="currency">Currencies</label>
+            <select id="currency" name="currency">
                 <option>EUR/USD</option>
                 <option>USD/JPY</option>
                 <option>GBD/USD</option>
@@ -44,8 +55,10 @@ function Currencies() {
     )
 }
 
-function Charts() {
+export function Charts() {
+    const [graph, setGraph] = useState(graph)
     return (
         <canvas id="marketGraphs"></canvas>
     )
 }
+//Muista tehdä useState jokaiseen dropDowniin

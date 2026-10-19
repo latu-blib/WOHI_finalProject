@@ -1,18 +1,31 @@
-function WatchList() {
+import {MarketsButton, NewsButton, WatchListButton} from "./header_buttons.jsx";
+import React from "react";
+
+function WatchListPage() {
     return (
-        <table id="theList">
-            <tbody>
-            <tr>
-                <th>Name</th>
-                <th>Value</th>
-                <th>Today%</th>
-            </tr>
-            <tr>
-                <th>stocks</th>
-                <td>11.00</td>
-                <td>??</td>
-            </tr>
-            </tbody>
-        </table>
+        <>
+            <div className="hero">
+                <MarketsButton />
+                <NewsButton />
+                <WatchListButton />
+            </div>
+            <table id="myList">
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Today%</th>
+                </tr>
+                <tr>
+                    <th>stocks</th>
+                    <td>11.00</td>
+                    <td>??</td>
+                </tr>
+                </tbody>
+            </table>
+        </>
     )
+}
+
+export default class WatchListPage {
 }
