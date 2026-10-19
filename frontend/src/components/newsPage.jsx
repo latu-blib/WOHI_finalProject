@@ -1,4 +1,4 @@
-import {MarketsButton, NewsButton, WatchListButton} from "./header_buttons.jsx";
+import {MarketsButton, NewsButton, SearchBar, WatchListButton} from "./header_buttons.jsx";
 import React from "react";
 
 function NewsPage() {
@@ -9,6 +9,9 @@ function NewsPage() {
                 <NewsButton />
                 <WatchListButton />
             </div>
+            <div>
+                <SearchBar/>
+            </div>
             <nav id="newsFeed">
                 <ul>
                     <li>items</li>
@@ -17,6 +20,4 @@ function NewsPage() {
         </>
     )
 }
-
-export default class NewsPage {
-}
+export default NewsPage;

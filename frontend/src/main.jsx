@@ -5,7 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import ReactDOM from "react-dom/client"
 import {BrowserRouter, Route, Routes} from "react-router"
-import NewsPage from "./components/newsPage.jsx";
+import {NewsPage} from "./components/newsPage.jsx";
 import WatchListPage from "./components/watchListPage.jsx";
 
 const root = document.getElementById("root");
@@ -14,9 +14,9 @@ ReactDOM.createRoot(root).render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}  />
-            <Route path="/markets" element={<App />} />
-            <Route path="/news" element={<NewsPage />} />
-            <Route path="/watchlist" element={<WatchListPage />} />
+            <Route path="/App.jsx" element={<App />} />
+            <Route path="/components/newsPage.jsx" element={<NewsPage />} />
+            <Route path="/components/watchListPage.jsx" element={<WatchListPage />} />
         </Routes>
     </BrowserRouter>,
 );

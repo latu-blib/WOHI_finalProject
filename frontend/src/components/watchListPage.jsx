@@ -1,4 +1,4 @@
-import {MarketsButton, NewsButton, WatchListButton} from "./header_buttons.jsx";
+import {MarketsButton, NewsButton, SearchBar, WatchListButton} from "./header_buttons.jsx";
 import React from "react";
 
 function WatchListPage() {
@@ -8,6 +8,9 @@ function WatchListPage() {
                 <MarketsButton />
                 <NewsButton />
                 <WatchListButton />
+            </div>
+            <div>
+                <SearchBar/>
             </div>
             <table id="myList">
                 <tbody>
@@ -27,5 +30,4 @@ function WatchListPage() {
     )
 }
 
-export default class WatchListPage {
-}
+export default WatchListPage;
