@@ -11,7 +11,7 @@ export function MarketsButton() {
 
 export function NewsButton() {
     return (
-        <Link to={"/components/newsPage.jsx"}>
+        <Link to={"/news"}>
         <button className="headerButtons" id="News">News</button>
         </Link>
     );
@@ -19,7 +19,7 @@ export function NewsButton() {
 
 export function WatchListButton() {
     return (
-        <Link to={"/components/watchListPage.jsx"}>
+        <Link to={"/watchlist"}>
         <button className="headerButtons" id="WatchList">Watchlist</button>
         </Link>
     );
@@ -35,10 +35,10 @@ export function SearchBar() {
         console.log("Searching", search)
 
         try {
-            const response = await fetch("http://localhost:8080/api/markets/${search}"
+            const response = await fetch(`http://localhost:8080/api/markets/${search}`
         );
             if (!response.ok) {
-                throw new Error("error:${response.status}");
+                throw new Error(`error:${response.status}`);
             }
             const data = await response.json();
             setStockData(data);

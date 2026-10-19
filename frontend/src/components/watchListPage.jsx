@@ -1,7 +1,7 @@
 import {MarketsButton, NewsButton, SearchBar, WatchListButton} from "./header_buttons.jsx";
 import React from "react";
 
-function WatchListPage() {
+export default function WatchListPage() {
     return (
         <>
             <div className="hero">
@@ -29,5 +29,3 @@ function WatchListPage() {
         </>
     )
 }
-
-export default WatchListPage;

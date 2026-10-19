@@ -5,7 +5,7 @@ export function Indexes(props) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        getData().then.data(result => {setData(result)
+        getData().then(result => {setData(result)
         }).catch(error => {
             console.error("Data fetch failed.", error);
         });
@@ -30,14 +30,14 @@ export function Materials(props) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        getData().then.data(result => {setData(result)
+        getData().then(result => {setData(result)
         }).catch(error => {
             console.error("Data fetch failed.", error);
         });
     }, []);
 
     function handleClick(props) {
-        console.log("Markets klikattu");
+        console.log("Materiaalit klikattu");
     }
     return (
         <>
@@ -58,14 +58,14 @@ export function Currencies(props) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        getData().then.data(result => {setData(result)
+        getData().then(result => {setData(result)
         }).catch(error => {
             console.error("Data fetch failed.", error);
         });
     }, []);
 
     function handleClick(props) {
-        console.log("Markets klikattu");
+        console.log("Valuutat klikattu");
     }
     return (
         <>
@@ -83,11 +83,6 @@ export function Currencies(props) {
     )
 }
 
-export function Charts(props) {
-    const [graph, setGraph] = useState(graph)
-    return (
-        <canvas id="marketGraphs"></canvas>
-    )
-}
+
 //Muista tehdä useState jokaiseen dropDowniin
 //Katso tarkemmin Fetch calls in React.
