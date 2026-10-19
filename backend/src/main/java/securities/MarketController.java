@@ -6,7 +6,7 @@ import org.springframework.web.client.RestClient;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
-@RequestMapping("/api/stocks")
+@RequestMapping("/api/markets")
 @CrossOrigin(origins = "http://localhost:5173")
 public class MarketController {
 
@@ -16,7 +16,7 @@ public class MarketController {
 
     public MarketController(RestClient.Builder builder) {
         this.restClient = builder
-                .baseUrl("https://api.marketstack.com")
+                .baseUrl("https://api.apilayer.net/marketstack")
                 .build();
     }
 

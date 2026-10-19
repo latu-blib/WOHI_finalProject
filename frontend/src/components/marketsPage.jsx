@@ -4,45 +4,44 @@ import {getData} from "../api/marketApi.js";
 export function Indexes(props) {
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        getData().then(result => {setData(result)
-        }).catch(error => {
-            console.error("Data fetch failed.", error);
-        });
-    }, []);
-
-    function handleClick(props) {
-        console.log("Markets klikattu");
+    async function handleChange(event) {
+        const selectedIndex = event.target.value;
+        console.log("Haettava symboli:", selectedIndex);
+        try {
+            const result = await getData(selectedIndex);
+            setData(result);
+        } catch (error) {
+            console.error("Data fetch failed:", error);
+        }
     }
-    return (
+    return  (
         <>
-        <label form="marketPlaces">Indexes</label>
-        <select id="marketPlaces" name="marketPlaces" onClick={handleClick}>
-            <option>OMXHPI</option>
-            <option>S&P500</option>
-            <option>DAX</option>
-        </select>
+            <label form="marketPlaces">Indexes</label>
+            <select id="marketPlaces" name="marketPlaces" onChange={handleChange}>
+                <option value="OMXHPI">OMXHPI</option>
+                <option value="S&P500">S&P500</option>
+                <option value="DAX">DAX</option></select>
         </>
-)
+    );
 }
 
 export function Materials(props) {
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        getData().then(result => {setData(result)
-        }).catch(error => {
-            console.error("Data fetch failed.", error);
-        });
-    }, []);
-
-    function handleClick(props) {
-        console.log("Materiaalit klikattu");
+    async function handleChange(event) {
+        const selectedIndex = event.target.value;
+        console.log("Haettava symboli:", selectedIndex);
+        try {
+            const result = await getData(selectedIndex);
+            setData(result);
+        } catch (error) {
+            console.error("Data fetch failed:", error);
+        }
     }
     return (
         <>
             <label form="materialList">Raw materials</label>
-            <select id="materialList" name="materialList" onClick={handleClick}>
+            <select id="materialList" name="materialList" onChange={handleChange}>
                 <option>WTI-Oil</option>
                 <option>Brent Oil</option>
                 <option>Gold</option>
@@ -57,20 +56,20 @@ export function Materials(props) {
 export function Currencies(props) {
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        getData().then(result => {setData(result)
-        }).catch(error => {
-            console.error("Data fetch failed.", error);
-        });
-    }, []);
-
-    function handleClick(props) {
-        console.log("Valuutat klikattu");
+    async function handleChange(event) {
+        const selectedIndex = event.target.value;
+        console.log("Haettava symboli:", selectedIndex);
+        try {
+            const result = await getData(selectedIndex);
+            setData(result);
+        } catch (error) {
+            console.error("Data fetch failed:", error);
+        }
     }
     return (
         <>
             <label form="currency">Currencies</label>
-            <select id="currency" name="currency" onClick={handleClick}>
+            <select id="currency" name="currency" onChange={handleChange}>
                 <option>EUR/USD</option>
                 <option>USD/JPY</option>
                 <option>GBD/USD</option>
