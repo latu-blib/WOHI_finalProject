@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import React from "react"
 import './index.css'
 import ReactDOM from "react-dom/client";
@@ -35,21 +35,5 @@ function App() {
           </>
           );
         }
-
-async function getData() {
-  try {
-    const response = await fetch('"https://api.marketstack.com"'); // URL of the REST API
-    // GET by default — no method specified
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`); // detect possible errors
-    }
-    const data = await response.json(); // extract the JSON response (needs await too)
-    console.log(data);
-    // use the data — for example, update the DOM
-  } catch (error) {
-    console.error('Error fetching data:', error); // handle errors
-  }
-}
-
 
 export default App
