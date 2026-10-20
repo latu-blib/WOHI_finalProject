@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { Link } from "react-router-dom";
+import {getData} from "../api/marketApi.js";
 
 export function MarketsButton() {
     return (
@@ -25,26 +26,15 @@ export function WatchListButton() {
     );
 }
 
-export function SearchBar() {
+export function SearchBar({onSearch}) {
 
     const [search, setSearch] = useState("");
-    const [stockData, setStockData] = useState([]);
 
-    async function handleSubmit(event) {
+    function handleSubmit(event) {
         event.preventDefault();
         console.log("Searching", search)
 
-        try {
-            const response = await fetch(`http://localhost:8080/api/markets/${search}`
-        );
-            if (!response.ok) {
-                throw new Error(`error:${response.status}`);
-            }
-            const data = await response.json();
-            setStockData(data);
-        } catch(error) {
-            console.error("Error", error);
-        }
+        onSearch(search)
     }
 
         return (
