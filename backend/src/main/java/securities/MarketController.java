@@ -25,11 +25,52 @@ public class MarketController {
 
         return restClient.get()
                 .uri(uriBuilder -> uriBuilder
-                        .path("/v2/eod/latest")
+                        .path("/v2/stockprice/latest")
+                        .queryParam("access_key", apiKey)
+                        .queryParam("ticker", symbol)
+                        .build())
+                .retrieve()
+                .body(String.class);
+    }
+
+    @GetMapping("/index/{symbol}")
+    public String getIndex(@PathVariable String symbol) {
+
+        return restClient.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/v2/exchanges/{mic}/eod/latest")
+                        .queryParam("access_key", apiKey)
+                        .queryParam("symbols", symbol)
+                        .queryParam("mic", symbol)
+                        .build())
+                .retrieve()
+                .body(String.class);
+    }
+
+    @GetMapping("/commodities/{symbol}")
+    public String getCommodity(@PathVariable String symbol) {
+
+        return restClient.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/v2/commodities/latest")
+                        .queryParam("access_key", apiKey)
+                        .queryParam("commodity_name", symbol)
+                        .build())
+                .retrieve()
+                .body(String.class);
+    }
+
+    @GetMapping("/currencies/{symbol}")
+    public String getCurrency(@PathVariable String symbol) {
+
+        return restClient.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/v2/currencies/latest")
                         .queryParam("access_key", apiKey)
                         .queryParam("symbols", symbol)
                         .build())
                 .retrieve()
                 .body(String.class);
     }
+
 }
