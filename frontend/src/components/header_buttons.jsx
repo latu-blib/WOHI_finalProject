@@ -29,6 +29,7 @@ export function WatchListButton() {
 export function SearchBar({onSearch}) {
 
     const [search, setSearch] = useState("");
+    const [stock, setStock] = useState("");
 
     function handleSubmit(event) {
         event.preventDefault();

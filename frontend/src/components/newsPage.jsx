@@ -1,21 +1,22 @@
 import {MarketsButton, NewsButton, WatchListButton} from "./header_buttons.jsx";
 import React, {useEffect, useState} from "react";
+import {getData} from "../api/marketApi.js";
 
 export default function NewsPage() {
-    const [article, setArticle] = useState([null])
+    const [article, setArticle] = useState([]);
+    const [selectedArticle, setSelectedArticle] = useState(null);
 
-    const articles = [
-        {
-            id : 0,
-            title : "Koira söi läksyni",
-            text : "Ei pidä paikkaansa."
-        },
-        {
-            id : 1,
-            title : "Ranska palaa.",
-            text : "opiskelijoita vai ei.",
+    useEffect(() => {
+        async function loadNews() {
+            try {
+                const data = await getData("news");
+                setArticle(data)
+            } catch (error) {
+                console.log("Fetch failed", error);
+            }
         }
-    ];
+        loadNews();
+    }, []);
 
     function ArticleModal({article, onClose}) {
         useEffect(() => {
@@ -56,8 +57,8 @@ export default function NewsPage() {
 
             <nav id="newsFeed">
                 <ul>
-                    {articles.map(article=>(
-                        <li key={article.id} onClick={() => setArticle(article)}
+                    {article.map(article=>(
+                        <li key={article.id} onClick={() => setSelectedArticle(article)}
                         >
                             {article.title}
                         </li>
@@ -66,7 +67,7 @@ export default function NewsPage() {
 
                 </ul>
             </nav>
-            <ArticleModal article={article} onClose={() => setArticle(null)}
+            <ArticleModal article={selectedArticle} onClose={() => setSelectedArticle(null)}
             />
         </>
     );

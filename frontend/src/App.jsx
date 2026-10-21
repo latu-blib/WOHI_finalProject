@@ -8,9 +8,10 @@ import NewsPage from "./components/newsPage.jsx";
 import {getData} from "./api/marketApi.js";
 
 
-function App() {
+function App({watchList, setWatchList}) {
   const [marketData, setMarketData] = useState([]);
     const [marketType, setMarketType] = useState("");
+    const [stock, setStock] = useState([]);
 
   async function handleChange(type, symbol) {
 
@@ -19,9 +20,37 @@ function App() {
           const result = await getData(type, symbol);
           setMarketData(result);
           setMarketType(type);
+
+          if (type === "stock") {
+              setStock(symbol);
+          }
       } catch (error) {
           console.error("Data fetch failed:", error);
       }
+  }
+
+    function addToWatchlist(symbol) {
+      if (!stock || !marketData?.data) {
+          return;
+      }
+
+      const latest = marketData.data[0];
+      const previous = marketData.data[1];
+
+      const todayChange = (latest.close/previous.close)-1;
+
+      const newItem = {
+          symbol: stock,
+          value: latest.close,
+          todayChange: todayChange
+      };
+
+      setWatchList(previousList => {
+          if (previousList.some(item => item.symbol === stock)) {
+              return previousList;
+          }
+          return [...previousList, newItem];
+      });
   }
 
   return (
@@ -34,6 +63,11 @@ function App() {
               <WatchListButton />
             </div>
             <div>
+                {marketType === "stock" && (
+                    <button onClick={() => addToWatchlist(stock)}>
+                        Add to watchlist
+                    </button>
+                )}
               <SearchBar onSearch={handleChange}/>
             </div>
             <div>
