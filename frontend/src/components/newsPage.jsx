@@ -9,9 +9,7 @@ export default function NewsPage() {
                 <NewsButton />
                 <WatchListButton />
             </div>
-            <div>
-                <SearchBar/>
-            </div>
+
             <nav id="newsFeed">
                 <ul>
                     <li>items</li>

@@ -9,9 +9,7 @@ export default function WatchListPage() {
                 <NewsButton />
                 <WatchListButton />
             </div>
-            <div>
-                <SearchBar/>
-            </div>
+
             <table id="myList">
                 <tbody>
                 <tr>

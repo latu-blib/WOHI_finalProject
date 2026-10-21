@@ -34,7 +34,7 @@ export function SearchBar({onSearch}) {
         event.preventDefault();
         console.log("Searching", search)
 
-        onSearch(search)
+        onSearch("stock", search)
     }
 
         return (
@@ -44,7 +44,7 @@ export function SearchBar({onSearch}) {
                        placeholder="Search..."
                        name="Search" value={search}
                        onChange={event => setSearch(event.target.value)}/>
-                <button type={"submit"}>Search</button>
+                <button type={"submit"}>Search a stock</button>
             </form>
         );
 }
