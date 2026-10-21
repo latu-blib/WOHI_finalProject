@@ -15,7 +15,7 @@ function App({watchList, setWatchList}) {
 
   async function handleChange(type, symbol) {
 
-      console.log("Haettava symboli ja tyyppi:", type, symbol);
+      console.log("Haettava symboli ja tyyppi:", symbol, type);
       try {
           const result = await getData(type, symbol);
           setMarketData(result);
@@ -40,7 +40,7 @@ function App({watchList, setWatchList}) {
       const todayChange = (latest.close/previous.close)-1;
 
       const newItem = {
-          symbol: stock,
+          symbol: latest.name,
           value: latest.close,
           todayChange: todayChange
       };

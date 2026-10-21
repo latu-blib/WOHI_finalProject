@@ -68,13 +68,19 @@ export function Materials({onSelect}) {
 export function Charts({data, type}) {
     console.log("Charts sai: ", data);
     let chartData;
+    let title;
 
     if (!type || !data || (Array.isArray(data) && data.length === 0)) {
         return <p>Valitse kohde nähdäksesi graafin.</p>;
     }
 
     if (type === "currency") {
+
         const timeSeries = data["Time Series FX (Daily)"];
+        const fromSymbol = data["Meta Data"]["2. From Symbol"];
+        const toSymbol = data["Meta Data"]["3. To Symbol"];
+        title = `${fromSymbol}/${toSymbol}`;
+
         if (!timeSeries) {
             return <p>Valuuttadataa ei löytynyt.</p>;
         }
@@ -97,6 +103,7 @@ export function Charts({data, type}) {
     }
 
     if (type === "stock") {
+        title = data.data[0].name;
 
         if (!data?.data || data.data.length === 0) {
             return <p>Osakedataa ei löytynyt.</p>;
@@ -134,6 +141,12 @@ export function Charts({data, type}) {
         const prices = timeSeries.map(
         item => Number(item.price || item.value)
     );
+        if (data.nominal === "XAUUSD") {
+            title = "Gold";
+        }
+        if (data.nominal === "XAGUSD") {
+            title = "Silver";
+        }
         chartData = {
             labels,
             datasets: [
@@ -150,6 +163,7 @@ export function Charts({data, type}) {
     }
     return (
         <div>
+            <h2>{title}</h2>
             <Line data={chartData}/>
         </div>
     )

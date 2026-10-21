@@ -3,7 +3,7 @@ export async function getData(type, symbol) {
     if (type === "stock") {
         endpoint = `markets/${symbol}`;
     } else if (type === "currency") {
-        endpoint = `markets/currency/${symbol}`;
+        endpoint = `markets/currencies/${symbol}`;
     } else if (type === "commodity") {
         endpoint = `markets/commodity/${symbol}`;
     } else if (type === "news") {
