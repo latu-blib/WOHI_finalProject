@@ -10,7 +10,7 @@ export default function NewsPage() {
         async function loadNews() {
             try {
                 const data = await getData("news");
-                setArticle(data)
+                setArticle(data.data)
             } catch (error) {
                 console.log("Fetch failed", error);
             }
@@ -39,8 +39,8 @@ export default function NewsPage() {
                     <button className={"closeButton"} onClick={onClose}>
                         X
                     </button>
-                    <h2>{article.title}</h2>
-                    <p>{article.text}</p>
+                    <p>Source: {article.source}</p>
+                    <p>URL: {article.url}</p>
                 </article>
             </div>
 
@@ -58,9 +58,12 @@ export default function NewsPage() {
             <nav id="newsFeed">
                 <ul>
                     {article.map(article=>(
-                        <li key={article.id} onClick={() => setSelectedArticle(article)}
+                        <li key={article.uuid} onClick={() => setSelectedArticle(article)} className="newsItem"
                         >
-                            {article.title}
+                            <h3 className="newsTitle">
+                                {article.title} </h3>
+                            <p className="snippet">
+                                {article.snippet} </p>
                         </li>
                     ))
                     }
@@ -69,6 +72,9 @@ export default function NewsPage() {
             </nav>
             <ArticleModal article={selectedArticle} onClose={() => setSelectedArticle(null)}
             />
+            <p>
+                <i>Click titles for source and URL</i>
+            </p>
         </>
     );
 }

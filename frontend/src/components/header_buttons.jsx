@@ -29,7 +29,17 @@ export function WatchListButton() {
 export function SearchBar({onSearch}) {
 
     const [search, setSearch] = useState("");
-    const [stock, setStock] = useState("");
+
+    async function handleSearch(event) {
+        const value = event.target.value;
+        setSearch(value);
+
+    }
+    function handleSelect(stock) {
+        setSearch(stock.name);
+
+        onSearch("stock", stock.ticker);
+    }
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -39,13 +49,16 @@ export function SearchBar({onSearch}) {
     }
 
         return (
+
             <form onSubmit={handleSubmit}>
-                <input type="Search"
+                <input type="search"
                        id="SearchBar"
-                       placeholder="Search..."
-                       name="Search" value={search}
-                       onChange={event => setSearch(event.target.value)}/>
+                       placeholder="Search company by its ticker..."
+                       name="Search"
+                       value={search}
+                       onChange={handleSearch}/>
                 <button type={"submit"}>Search a stock</button>
+
             </form>
         );
 }

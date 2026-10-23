@@ -7,7 +7,7 @@ export async function getData(type, symbol) {
     } else if (type === "commodity") {
         endpoint = `markets/commodity/${symbol}`;
     } else if (type === "news") {
-        endpoint = `markets/news/${symbol}`;
+        endpoint = `markets/news`;
     } else {
         throw new Error(`Unknown market type: ${type}`);
     }

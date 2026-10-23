@@ -32,6 +32,7 @@ export function Currencies({onSelect}) {
             <label form="currencies">Currencies</label>
             <select id="currencies" name="currency" onChange={handleSelect}
             >
+                <option value="" disable selected>Select a currency vs USD</option>
                 <option value="JPY">USD/JPY</option>
                 <option value="EUR">USD/EUR</option>
                 <option value="GBP">USD/GBP</option>
@@ -54,6 +55,7 @@ export function Materials({onSelect}) {
             <label form="materialList">Commodities</label>
             <select id="materialList" name="commodity" onChange={handleSelect}
             >
+                <option value="" disable selected>Select a commodity</option>
                 <option value="WTI">WTI-Oil futures</option>
                 <option value="BRENT">Brent Oil futures</option>
                 <option value="XAU">Gold</option>
@@ -71,7 +73,7 @@ export function Charts({data, type}) {
     let title;
 
     if (!type || !data || (Array.isArray(data) && data.length === 0)) {
-        return <p>Valitse kohde nähdäksesi graafin.</p>;
+        return;
     }
 
     if (type === "currency") {
@@ -158,9 +160,7 @@ export function Charts({data, type}) {
             ]
         }
     }
-    if (!chartData) {
-        return <p>Graafidataa ei löytynyt.</p>;
-    }
+
     return (
         <div>
             <h2>{title}</h2>
