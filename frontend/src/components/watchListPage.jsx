@@ -1,5 +1,5 @@
 import {MarketsButton, NewsButton, WatchListButton} from "./header_buttons.jsx";
-import React, {useState} from "react";
+import React from "react";
 
 export default function WatchListPage({watchList, setWatchList}) {
     console.log("Watchlist: ", watchList)
@@ -11,13 +11,13 @@ export default function WatchListPage({watchList, setWatchList}) {
 
     return (
         <>
-            <div className="hero">
+            <nav className="nav nav-pills justify-content-center gap-3 p-3 bg-light">
                 <MarketsButton />
                 <NewsButton />
                 <WatchListButton />
-            </div>
+            </nav>
 
-            <table id="myList">
+            <table className="table table-striped">
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -35,7 +35,7 @@ export default function WatchListPage({watchList, setWatchList}) {
                             {item.todayChange.toFixed(2)} %
                         </td>
                         <td>
-                        <button id="removeFromWatchList" onClick={() => removeFromWatchList(symbol)
+                        <button className="btn btn-danger" onClick={() => removeFromWatchList(symbol)
                         }
                         >
                             X

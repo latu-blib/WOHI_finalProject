@@ -34,9 +34,9 @@ export default function NewsPage() {
             return null;
         }
         return (
-            <div className={"modalBackground"}>
-                <article className={"articleModal"}>
-                    <button className={"closeButton"} onClick={onClose}>
+            <div className="modalBackground">
+                <article className="articleModal">
+                    <button className="closeButton" onClick={onClose}>
                         X
                     </button>
                     <p>Source: {article.source}</p>
@@ -49,11 +49,11 @@ export default function NewsPage() {
 
     return (
         <>
-            <div className="hero">
+            <nav className="nav nav-pills justify-content-center gap-3 p-3 bg-light">
                 <MarketsButton />
                 <NewsButton />
                 <WatchListButton />
-            </div>
+            </nav>
 
             <nav id="newsFeed">
                 <ul>

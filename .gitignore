@@ -23,3 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 backend/src/main/resources/application.properties
+backend/target/classes/securities/SecuritiesApplication.class

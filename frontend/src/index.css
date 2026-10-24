@@ -109,15 +109,3 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
-#marketsPage {
-  display: grid;
-  justify-items: center;
-  grid-template: auto 15px 10% 10% 40% auto/ auto 20% 20% 20% auto;
-}
-.headerButtons {
-  color : black;
-  font-size: large;
-  font-family: "Rockwell Extra Bold";
-  justify-items: center;
-  align-items: center;
-}

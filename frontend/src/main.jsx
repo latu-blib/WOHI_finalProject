@@ -1,5 +1,4 @@
-import {StrictMode, useState} from 'react'
-import { createRoot } from 'react-dom/client'
+import {useState} from 'react'
 import React from "react"
 import './index.css'
 import App from './App.jsx'
@@ -7,6 +6,7 @@ import ReactDOM from "react-dom/client"
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import NewsPage from "./components/newsPage.jsx";
 import WatchListPage from "./components/watchListPage.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Root() {
     const [watchList, setWatchList] = useState([]);

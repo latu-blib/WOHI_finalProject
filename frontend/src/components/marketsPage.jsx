@@ -29,7 +29,7 @@ export function Currencies({onSelect}) {
 
     return  (
         <>
-            <label form="currencies">Currencies</label>
+            <label form="currencies"></label>
             <select id="currencies" name="currency" onChange={handleSelect}
             >
                 <option value="" disable selected>Select a currency vs USD</option>
@@ -52,7 +52,7 @@ export function Materials({onSelect}) {
 
     return (
         <>
-            <label form="materialList">Commodities</label>
+            <label form="materialList"></label>
             <select id="materialList" name="commodity" onChange={handleSelect}
             >
                 <option value="" disable selected>Select a commodity</option>
@@ -162,7 +162,7 @@ export function Charts({data, type}) {
     }
 
     return (
-        <div>
+        <div className="card shadow-sm border-1 rounded-4">
             <h2>{title}</h2>
             <Line data={chartData}/>
         </div>

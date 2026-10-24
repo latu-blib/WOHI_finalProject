@@ -1,11 +1,10 @@
 import {useState} from "react";
 import { Link } from "react-router-dom";
-import {getData} from "../api/marketApi.js";
 
 export function MarketsButton() {
     return (
         <Link to="/">
-            <button className="headerButtons">Markets</button>
+            <button className="btn btn-primary border border-light px-4 me-3">Markets</button>
         </Link>
     );
 }
@@ -13,7 +12,7 @@ export function MarketsButton() {
 export function NewsButton() {
     return (
         <Link to={"/news"}>
-        <button className="headerButtons" id="News">News</button>
+        <button className="btn btn-primary border border-light px-4 me-3" id="News">News</button>
         </Link>
     );
 }
@@ -21,7 +20,7 @@ export function NewsButton() {
 export function WatchListButton() {
     return (
         <Link to={"/watchlist"}>
-        <button className="headerButtons" id="WatchList">Watchlist</button>
+        <button className="btn btn-primary border border-light px-4 me-3" id="WatchList">Watchlist</button>
         </Link>
     );
 }
@@ -50,10 +49,11 @@ export function SearchBar({onSearch}) {
 
         return (
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="mb-4">
                 <input type="search"
                        id="SearchBar"
-                       placeholder="Search company by its ticker..."
+                       className="form-control"
+                       placeholder="Company ticker"
                        name="Search"
                        value={search}
                        onChange={handleSearch}/>

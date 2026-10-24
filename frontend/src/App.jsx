@@ -1,10 +1,8 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import React from "react";
 import './index.css';
 import {MarketsButton, NewsButton, WatchListButton, SearchBar} from "./components/header_buttons.jsx";
 import {Currencies, Materials, Charts} from "./components/marketsPage.jsx";
-import WatchListPage from "./components/watchListPage.jsx";
-import NewsPage from "./components/newsPage.jsx";
 import {getData} from "./api/marketApi.js";
 
 
@@ -55,31 +53,32 @@ function App({watchList, setWatchList}) {
 
   return (
       <>
-          <section id="center">
-            <div className="hero">
-                <h1>Toimii</h1>
-              <MarketsButton />
-              <NewsButton />
-              <WatchListButton />
-            </div>
-            <div>
-                {marketType === "stock" && (
-                    <button onClick={() => addToWatchlist(stock)}>
-                        Add to watchlist
-                    </button>
-                )}
-              <SearchBar onSearch={handleChange}/>
-            </div>
-            <div>
-              <Currencies onSelect={handleChange} />
-              <Materials onSelect={handleChange} />
-            </div>
-              <Charts data={marketData}
-                      type={marketType}
-              />
-          </section>
-          </>
-          );
-        }
+          <div className="container">
+              <section id="center">
+                  <nav className="nav nav-pills justify-content-center gap-3 p-3 bg-light">
+                      <MarketsButton />
+                      <NewsButton />
+                      <WatchListButton />
+                  </nav>
+                  <div>
+                      {marketType === "stock" && (
+                          <button className="btn btn-success" onClick={() => addToWatchlist(stock)}>
+                              Add to watchlist
+                          </button>
+                      )}
+                      <SearchBar onSearch={handleChange}/>
+                  </div>
+                  <div>
+                      <Currencies onSelect={handleChange} />
+                      <Materials onSelect={handleChange} />
+                  </div>
+                  <Charts data={marketData}
+                          type={marketType}
+                  />
+              </section>
+          </div>
+      </>
+  );
+}
 
 export default App
