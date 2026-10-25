@@ -1,6 +1,6 @@
 # App for Securities
 
-A full-stack market tracking application for monitoring stock prices, exchange rates, commodities, and recent financial news. The app includes a searchable dashboard, interactive charts, and a personal watchlist for favorite securities.
+A full-stack market tracking application for monitoring currencies, stock- and commodityprices, and recent financial news. The app includes a searchable dashboard, interactive charts, and a personal watchlist for favorite securities.
 
 ## Features
 
@@ -10,6 +10,7 @@ A full-stack market tracking application for monitoring stock prices, exchange r
 - Save selected stocks to a watchlist
 - View recent market news
 - Responsive UI built with React and Bootstrap
+- built with free API's in mind
 
 ## Tech Stack
 
