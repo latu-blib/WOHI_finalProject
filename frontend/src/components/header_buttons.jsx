@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export function MarketsButton() {
     return (
-        <Link to="/">
+        <Link to="/WOHI_finalProject/">
             <button className="btn btn-primary border border-light px-4 me-3">Markets</button>
         </Link>
     );
