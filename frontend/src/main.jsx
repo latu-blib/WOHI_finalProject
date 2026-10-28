@@ -13,7 +13,7 @@ function Root() {
 
     return (
         <Routes>
-            <Route path="/" element={
+            <Route path="/WOHI_finalProject/" element={
                 <App
                     watchList={watchList}
                     setWatchList={setWatchList}
