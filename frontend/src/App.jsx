@@ -53,6 +53,7 @@ function App({watchList, setWatchList}) {
 
   return (
       <>
+          <body className="background">
           <div className="container">
               <section id="center">
                   <nav className="nav nav-pills justify-content-center gap-3 p-3 bg-light">
@@ -77,6 +78,7 @@ function App({watchList, setWatchList}) {
                   />
               </section>
           </div>
+          </body>
       </>
   );
 }

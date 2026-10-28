@@ -17,7 +17,7 @@ export default function WatchListPage({watchList, setWatchList}) {
                 <WatchListButton />
             </nav>
 
-            <table className="table table-striped">
+            <table className="table table-striped shadow btn-styled">
                 <thead>
                 <tr>
                     <th>Name</th>

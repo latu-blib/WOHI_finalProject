@@ -44,7 +44,6 @@ public class MarketController {
 
     @GetMapping("/{symbol}")
     public String getStock(@PathVariable String symbol) {
-        System.out.println("API KEY = " + marketStackApiKey);
 
         return marketStackrestClient.get()
                 .uri(uriBuilder -> uriBuilder
