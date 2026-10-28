@@ -38,7 +38,6 @@ jobs:
           node-version: 20
 
       - name: install dependencies
-        working-directory: /app_for_securities
         run: npm ci
 
       - name: Upload artifact
