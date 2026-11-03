@@ -49,32 +49,32 @@ export default function NewsPage() {
 
     return (
         <>
-            <nav className="nav nav-pills justify-content-center gap-3 p-3 bg-light">
-                <MarketsButton />
-                <NewsButton />
-                <WatchListButton />
-            </nav>
-
-            <nav id="newsFeed">
-                <ul>
-                    {article.map(article=>(
-                        <li key={article.uuid} onClick={() => setSelectedArticle(article)} className="newsItem"
-                        >
-                            <h3 className="newsTitle">
-                                {article.title} </h3>
-                            <p className="snippet">
-                                {article.snippet} </p>
-                        </li>
-                    ))
-                    }
-
-                </ul>
-            </nav>
-            <ArticleModal article={selectedArticle} onClose={() => setSelectedArticle(null)}
-            />
-            <p>
-                <i>Click titles for source and URL</i>
-            </p>
+                <section id="newsFeed">
+                    <nav className="nav nav-pills justify-content-center gap-3 p-3 bg-light">
+                        <MarketsButton />
+                        <NewsButton />
+                        <WatchListButton />
+                    </nav>
+                    <nav>
+                        <ul>
+                            {article.map(article=>(
+                                <li key={article.uuid} onClick={() => setSelectedArticle(article)} className="newsItem"
+                                >
+                                    <h3 className="newsTitle">
+                                        {article.title} </h3>
+                                    <p className="snippet">
+                                        {article.snippet} </p>
+                                </li>
+                            ))
+                            }
+                        </ul>
+                    </nav>
+                    <ArticleModal article={selectedArticle} onClose={() => setSelectedArticle(null)}
+                    />
+                    <p>
+                        <i>Click titles for source and URL</i>
+                    </p>
+                </section>
         </>
     );
 }

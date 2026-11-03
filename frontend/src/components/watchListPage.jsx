@@ -35,7 +35,7 @@ export default function WatchListPage({watchList, setWatchList}) {
                             {item.todayChange.toFixed(2)} %
                         </td>
                         <td>
-                        <button className="btn btn-danger" onClick={() => removeFromWatchList(symbol)
+                        <button className="btn btn-danger" onClick={() => removeFromWatchList(item.symbol)
                         }
                         >
                             X

@@ -52,6 +52,8 @@
 
 body {
   margin: 0;
+  background-image: url("/modern-navy-grid-glowing-squares.jpg");
+  background-size: inherit;
 }
 
 #root {
@@ -64,6 +66,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background: white;
 }
 
 h1,
@@ -110,10 +113,20 @@ code {
   background: var(--code-bg);
 }
 
-.background {
-  background-image: url("modern-navy-grid-glowing-squares.jpg");
+.content-container {
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(10, 15, 35, 0.85);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 #newsFeed {
   background-color: ivory;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
