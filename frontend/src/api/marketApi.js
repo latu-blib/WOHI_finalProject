@@ -12,9 +12,11 @@ export async function getData(type, symbol) {
         throw new Error(`Unknown market type: ${type}`);
     }
 
-    const response = await fetch(`http://localhost:8080/api/${endpoint}`);
+    const response = await fetch(`${API_BASE}/api/${endpoint}`);
     if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
     }
     return await response.json();
 }
+
+const API_BASE = "https://wohi-backend.onrender.com";

@@ -9,7 +9,11 @@ import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/api/markets")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://latu-blib.github.io"
+}
+)
 
 public class MarketController {
 
